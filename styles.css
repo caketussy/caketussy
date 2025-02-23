@@ -3,16 +3,16 @@ body {
     padding: 0;
     background-color: #ffffff;
     font-family: Helvetica, sans-serif;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 header {
     text-align: center;
-    padding: 5vh 0;
+    padding: 40px 0;
 }
 
 .logo-link {
@@ -20,8 +20,7 @@ header {
 }
 
 .logo {
-    width: 20vw;
-    max-width: 250px;
+    width: 250px; /* Adjust as needed */
     height: auto;
     transition: opacity 0.3s ease;
 }
@@ -35,34 +34,27 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2vh 0;
 }
 
 .icon-row {
     display: flex;
     justify-content: center;
-    gap: 2vw; /* Relative gap that scales */
-    flex-shrink: 1; /* Allows the row to shrink if needed */
+    gap: 10px;
 }
 
 .icon-box {
     position: relative;
-    width: 15vw; /* Scales with viewport */
-    max-width: 150px; /* Max size on large screens */
-    min-width: 80px; /* Minimum size to prevent getting too small */
-    height: 15vw;
-    max-height: 150px;
-    min-height: 80px;
+    width: 150px;
+    height: 150px;
     cursor: pointer;
     display: block;
     text-decoration: none;
-    flex-shrink: 1; /* Allows individual boxes to shrink */
 }
 
 .icon {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain; /* Ensures the image scales properly without cropping */
     transition: opacity 0.3s ease;
 }
 
@@ -76,7 +68,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #000000;
-    font-size: clamp(12px, 1.5vw, 18px); /* Scales text, with min and max */
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     opacity: 0;
@@ -88,21 +80,21 @@ header {
 }
 
 footer {
-    padding: 2vh 0;
+    padding: 20px;
     text-align: center;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 5vw;
-    margin-bottom: 1vh;
+    gap: 30px;
+    margin-bottom: 10px;
 }
 
 .social-links a {
     color: #000000;
     text-decoration: none;
-    font-size: clamp(10px, 1.2vw, 16px);
+    font-size: 16px;
     transition: opacity 0.3s ease;
 }
 
@@ -111,59 +103,6 @@ footer {
 }
 
 .footer-text {
-    font-size: clamp(8px, 1vw, 14px);
+    font-size: 14px;
     color: #666;
-}
-
-/* Mobile Adjustments (screen width <= 768px) */
-@media (max-width: 768px) {
-    .logo {
-        width: 30vw; /* Slightly larger on mobile */
-        max-width: 200px;
-    }
-
-    .container {
-        padding: 5vh 0;
-    }
-
-    .icon-row {
-        gap: 1vw; /* Smaller gap on mobile */
-    }
-
-    .icon-box {
-        width: 20vw; /* Slightly larger relative size on mobile */
-        max-width: 100px;
-        min-width: 60px; /* Smaller minimum for tiny screens */
-        height: 20vw;
-        max-height: 100px;
-        min-height: 60px;
-        display: flex;
-        flex-direction: column; /* Stack text below icon */
-        align-items: center;
-    }
-
-    .icon {
-        width: 100%;
-        height: auto; /* Adjust height naturally */
-    }
-
-    .icon-text {
-        position: static; /* Move below icon */
-        transform: none;
-        font-size: clamp(10px, 2vw, 14px);
-        opacity: 1; /* Always visible on mobile */
-        margin-top: 0.5vh; /* Space between icon and text */
-    }
-
-    .icon-box:hover .icon {
-        opacity: 1; /* Disable hover opacity change */
-    }
-
-    .icon-box:hover .icon-text {
-        opacity: 1; /* Already visible, no change */
-    }
-
-    .social-links {
-        gap: 3vw; /* Tighter gap on mobile */
-    }
 }
